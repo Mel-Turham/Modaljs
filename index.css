@@ -1,0 +1,107 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+	line-height: 1.5;
+	font-family: sans-serif;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.open-modal{
+  border: none;
+  padding: .5rem 1rem;
+  background: linear-gradient(45deg, rgb(120, 120, 245),rgb(238, 64, 64),rgb(241, 241, 49));
+  cursor: pointer;
+  font-weight: bolder;
+  color: #fff;
+  border-radius:5px;
+  
+}
+
+.container {
+	display: none;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+  transition: 30ms linear;
+  
+}
+
+.container.active{
+  display: flex;
+}
+
+.container form {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	row-gap: 0.5rem;
+	width: 31.25rem;
+	background-color: #fff;
+	padding: 2rem;
+  animation: opacityAnime 200ms forwards;
+}
+@keyframes opacityAnime{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+form h1 {
+	font-size: 1.1rem;
+	text-transform: uppercase;
+	font-weight: 300;
+}
+
+form input {
+	width: 100%;
+	padding: 5px;
+	border: none;
+	outline: none;
+	position: relative;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.container-buttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+.container-buttons button {
+	border: none;
+	padding: 0.5rem 1rem;
+	font-size: 15px;
+  font-weight: bold;
+	cursor: pointer;
+  color: #fff;
+}
+
+.container-buttons button[type='submit'] {
+  background-color:rgb(8, 228, 8);
+}
+
+.container-buttons button[type="reset"]{
+  background-color: rgb(219, 5, 5);
+}
